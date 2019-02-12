@@ -13,7 +13,7 @@ def create_parser():
 
 def main():
     from hr import hr
-    args = create_paser().parse_args()
+    args = create_parser().parse_args()
 
     if args.export:
         pass
