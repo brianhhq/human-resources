@@ -1,4 +1,5 @@
 import subprocess
+import json
 
 def create_user(user):
     print(f"Adding user `{user['name']}`")
@@ -17,3 +18,7 @@ def delete_user(username):
 def update_user(user):
     return subprocess.Popen(['usermod','-p', user['password'], user['name']], stdout=subprocess.PIPE)
 
+def parse_inventory_file(path):
+    print(path)
+    with open(path) as f:
+        return json.load(f)

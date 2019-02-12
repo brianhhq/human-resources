@@ -10,3 +10,13 @@ def create_parser():
             help="Whether is to export"
             )
     return parser
+
+def main():
+    from hr import hr
+    args = create_paser().parse_args()
+
+    if args.export:
+        pass
+    else:
+        users = hr.parse_inventory_file(args.inventory_file)
+        hr.create_user(users[0])
